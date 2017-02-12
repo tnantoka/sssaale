@@ -1,0 +1,15 @@
+.display-4 {
+    font-weight: 100;
+}
+
+.display-4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.form-control,
+.btn,
+.card,
+.list-group-item {
+    border-radius: 2px !important;
+}
