@@ -13,7 +13,7 @@ Server-Side Swift as a Live Example
 ## Usage
 
 ```
-$ vapor new https://github.com/tnantoka/sssaale
+$ vapor new Hello --template=tnantoka/sssaale
 ```
 
 ## Development
