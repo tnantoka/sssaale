@@ -9,6 +9,10 @@ class App extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     
+    componentDidMount() {
+        this.input.focus()
+    }
+
     handleChange(event) {
         const { example } = this.state
         example.input = event.target.value
@@ -39,7 +43,7 @@ class App extends React.Component {
             <div>
                 <form className="my-4" onSubmit={ this.handleSubmit }>
                     <div className="form-group">
-                        <input type="text" className="form-control form-control-lg" value={ example.input } onChange={ this.handleChange } />
+                        <input type="text" className="form-control form-control-lg" value={ example.input } onChange={ this.handleChange } ref={ input => this.input = input } />
                     </div>
                     <div className="form-group">
                         <input type="submit" className="btn btn-secondary btn-block btn-lg" disabled={loading} />
