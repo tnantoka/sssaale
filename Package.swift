@@ -1,7 +1,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "sssaale",
+    name: "VaporApp",
     targets: [
         Target(name: "App", dependencies: ["AppLogic"]),
     ],
