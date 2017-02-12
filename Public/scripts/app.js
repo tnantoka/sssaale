@@ -38,13 +38,11 @@ class App extends React.Component {
         return (
             <div>
                 <form className="my-4" onSubmit={ this.handleSubmit }>
-                    <div className="input-group input-group-lg">
-                        <input type="text" className="form-control" value={ example.input } onChange={ this.handleChange } />
-                        <span className="input-group-btn">
-                            <button className="btn btn-secondary" type="submit">
-                                <i className={ `fa fa-fw fa-refresh ${loading ? 'fa-spin' : ''}` }></i>
-                            </button>
-                        </span>
+                    <div className="form-group">
+                        <input type="text" className="form-control form-control-lg" value={ example.input } onChange={ this.handleChange } />
+                    </div>
+                    <div className="form-group">
+                        <input type="submit" className="btn btn-secondary btn-block btn-lg" disabled={loading} />
                     </div>
                 </form>
                 { example.output && <div className="card text-left">
