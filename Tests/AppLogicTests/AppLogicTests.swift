@@ -6,7 +6,7 @@ import Vapor
 class AppLogicTests: XCTestCase {
     static let allTests = [
         ("testRoot", testRoot),
-        ("testExample", testExamples),
+        ("testExample", testExample),
     ]
     
     func testRoot() {
@@ -17,10 +17,15 @@ class AppLogicTests: XCTestCase {
         XCTAssertTrue(body.contains(title))
     }
     
-    func testExamples() {
+    func testExample() {
         let drop = try! makeTestDroplet()
         let json = try! JSON(node: .object([ "input" : "hello" ]))
-        let req = try! Request(method: .post, uri: "/example", body: json.makeBody())
+        let req = try! Request(
+            method: .post,
+            uri: "/example",
+            headers: [ HeaderKey.contentType : "application/json" ],
+            body: json.makeBody()
+        )
         let res = try! drop.respond(to: req)
         let body = res.body.bytes!.string
         XCTAssertTrue(body.contains("HELLO"))
