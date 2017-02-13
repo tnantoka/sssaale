@@ -10,11 +10,6 @@ final class Example: Model {
         return input.uppercased()
     }
     
-    init(input: String) {
-        id = UUID().uuidString.makeNode()
-        self.input = input
-    }
-
     init(node: Node, in context: Context) throws {
         id = try node.extract("id")
         input = try node.extract("input")
